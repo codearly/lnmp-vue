@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  vue:
+    # dockerfile文件位置
+    # build: ./
+    image: node-vue:0.1
+    container_name: vue-cli
+    ports:
+        - "8080:8080"
+        - "8000:8000"
+    # 将工作目录挂载到容器内
+    volumes:
+        - ~/dockerPro/src:/usr/src
+    environment:
+    # 环境变量设置参考官方文档
+    # https://cli.vuejs.org/guide/mode-and-env.html#modes
+    # vue-cli-service serve 用到的
+        - NODE_ENV=development
+        # 热更新设置
+        - CHOKIDAR_USEPOLLING=true
+        - CHOKIDAR_INTERVAL=100
