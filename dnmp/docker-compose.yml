@@ -29,7 +29,8 @@ services:
     ports: 
       - "9000:9000"
     volumes: 
-      - ~/dockerPro/www:/var/www/html
+      # - ~/dockerPro/www:/var/www/html
+      - ~/dockerPro/www:/www
       - ./phpfpm/etc:/usr/local/etc
     links: 
       - mydb:mydb
@@ -45,6 +46,7 @@ services:
     volumes: 
       - ~/dockerPro/www:/www
       - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/log:/var/log/nginx
     links: 
       - myphp:PHP-FPM 
     networks: 
