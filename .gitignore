@@ -1,3 +1,4 @@
 dnmp/mysql/data/*
 dnmp/redis/data/*
 dnmp/nginx/log/*
+.DS_Store
